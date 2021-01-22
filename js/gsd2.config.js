@@ -43,26 +43,6 @@ window._genesys = {
   }
 };
 
-var oPlugin = CXBus.registerPlugin("myPlugin");
-
-
-oPlugin.before("WebChat.open", function(){
-  var NOW_name = window.NOW ? window.NOW.user_display_name : "";
-  return { form : { autoSubmit: true}, formJSON: {
-    wrapper: "<table></table>",
-    inputs: [
-        {
-            name: "nickname", 
-            maxlength: "100",
-            placeholder: "@i18n:webchat.ChatFormPlaceholderNickname",
-            label: "@i18n:webchat.ChatFormNickname",
-            readonly: true,
-            value: NOW_name
-        }
-    ]
-}};;
-});
-
 // var widgetBaseUrl = 'https://apps.mypurecloud.com/widgets/9.0/',
 //         widgetScriptElement = document.createElement('script');
            
@@ -75,3 +55,22 @@ oPlugin.before("WebChat.open", function(){
 //     });
 
 //     document.head.append(widgetScriptElement);
+
+var oPlugin = CXBus.registerPlugin("myPlugin");
+
+oPlugin.before("WebChat.open", function(){
+  var NOW_name = window.NOW ? window.NOW.user_display_name : "";
+  return { form : { autoSubmit: true}, formJSON: {
+    wrapper: "<table></table>",
+    inputs: [
+      {
+          name: "nickname", 
+          maxlength: "100",
+          placeholder: "@i18n:webchat.ChatFormPlaceholderNickname",
+          label: "@i18n:webchat.ChatFormNickname",
+          readonly: true,
+          value: NOW_name
+      }
+    ]
+  }};;
+});
