@@ -103,6 +103,7 @@ oPlugin.before("WebChat.open", function(){
       //   readonly: true,
       //   value: NOW_name
       // },
+      formName,
       {
         id: "cx_webchat_form_email",
         name: "email", 
