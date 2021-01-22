@@ -47,7 +47,7 @@ var oPlugin = CXBus.registerPlugin("myPlugin");
 
 
 oPlugin.before("WebChat.open", function(){
-  var NOW_name = function(){ if(window.NOW)return window.NOW.user_display_name; return ""}
+  var NOW_name = window.NOW ? window.NOW.user_display_name : "";
   return { form : { autoSubmit: true}, formJSON: {
     wrapper: "<table></table>",
     inputs: [
