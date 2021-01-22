@@ -77,7 +77,6 @@ oPlugin.before("WebChat.open", function(){
     NOW_name = window.NOW.user_display_name;
     formName = {
         name: "nickname", 
-        placeholder: "@i18n:webchat.ChatFormPlaceholderNickname",
         label: "Name",
         readonly: true,
         value: NOW_name
