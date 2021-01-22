@@ -14,6 +14,7 @@ window._genesys = {
                     maxlength: "100",
                     placeholder: "@i18n:webchat.ChatFormPlaceholderNickname",
                     label: "@i18n:webchat.ChatFormNickname",
+                    readonly: true,
                     value: "Angelo"
                 }
             ]
