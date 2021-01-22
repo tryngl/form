@@ -87,7 +87,7 @@ oPlugin.before("WebChat.open", function(){
     formName = {
       name: "nickname", 
       label: "Name",
-      type: hidden,
+      type: "hidden",
       value: NOW_name
     }
   }
