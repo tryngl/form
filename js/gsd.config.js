@@ -47,7 +47,7 @@ window._genesys = {
             },
             autoInvite: {
                 enabled: true,
-                timeToInviteSeconds: 20,
+                timeToInviteSeconds: 15,
                 inviteTimeoutSeconds: 30
             },
         },
