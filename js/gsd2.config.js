@@ -51,8 +51,9 @@ var oPlugin = CXBus.registerPlugin("myPlugin");
 
 // Use before function to intercept 'WebChat.open' command
 // and manipulate the input 'options' object before execution continues
-oPlugin.before("WebChat.open", function(options){
+oPlugin.before("WebChat.open", function(){
   //if(options)options.form.autoSubmit=true;
+  var options = {};
   options.form.autoSubmit=true;
   // Still need to return the 'options' object to continue execution
   return options;
