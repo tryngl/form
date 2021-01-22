@@ -71,8 +71,7 @@ window._genesys = {
 var oPlugin = CXBus.registerPlugin("myPlugin");
 
 oPlugin.before("WebChat.open", function(){
-  //var NOW_name = window.NOW ? window.NOW.user_display_name : "Customer";
-  var NOW_name = "Customer";
+  var NOW_name = "User";
   var formName = {};
   if (window.NOW) {
     NOW_name = window.NOW.user_display_name;
@@ -95,14 +94,6 @@ oPlugin.before("WebChat.open", function(){
   return { form : { autoSubmit: false}, formJSON: {
     wrapper: "<table></table>",
     inputs: [
-      // {
-      //   name: "nickname", 
-      //   maxlength: "100",
-      //   placeholder: "@i18n:webchat.ChatFormPlaceholderNickname",
-      //   label: "Name",
-      //   readonly: true,
-      //   value: NOW_name
-      // },
       formName,
       {
         id: "cx_webchat_form_email",
