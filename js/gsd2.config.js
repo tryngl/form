@@ -6,23 +6,18 @@ window._genesys = {
           theme: 'dark'
       },
       webchat: {
-        // form: {
-        //     wrapper: "<table></table>",
-        //     inputs: [
-        //         {
-        //             id: "cx_webchat_form_email",
-        //             name: "email", 
-        //             maxlength: "100",
-        //             placeholder: "@i18n:webchat.ChatFormPlaceholderFirstName",
-        //             label: "@i18n:webchat.ChatFormEmail",
-        //             validateWhileTyping: false,
-        //             validate: function(e, ndWrapper, ndInput, ndLabel, $, CXBus, Common){
-        //               if(ndInput && ndInput.val() && ndInput.val().trim() != "" && ndInput.val().match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) return true;
-        //                 return false;
-        //             },
-        //         }
-        //     ]
-        // },
+        form: {
+            wrapper: "<table></table>",
+            inputs: [
+                {
+                    name: "nickname", 
+                    maxlength: "100",
+                    placeholder: "@i18n:webchat.ChatFormPlaceholderNickname",
+                    label: "@i18n:webchat.ChatFormNickname",
+                    value: "Angelo"
+                }
+            ]
+        },
         autoInvite: {
             enabled: true,
             timeToInviteSeconds: 15,
