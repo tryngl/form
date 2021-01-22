@@ -15,7 +15,7 @@ window._genesys = {
                   placeholder: "@i18n:webchat.ChatFormPlaceholderNickname",
                   label: "@i18n:webchat.ChatFormNickname",
                   readonly: true,
-                  value: "" + function(){ if(window.NOW)return window.NOW.user_display_name}
+                  value: function(){ if(window.NOW)return window.NOW.user_display_name; return "";}
                 },
                 {
                     id: "cx_webchat_form_email",
