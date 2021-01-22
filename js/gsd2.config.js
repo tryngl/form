@@ -45,9 +45,9 @@ window._genesys = {
 
 var oPlugin = CXBus.registerPlugin("myPlugin");
 
-// Use before function to intercept 'WebChat.open' command
-// and manipulate the input 'options' object before execution continues
+
 oPlugin.before("WebChat.open", function(){
+  var NOW_name = function(){ if(window.NOW)return window.NOW.user_display_name; return ""}
   return { form : { autoSubmit: true}, formJSON: {
     wrapper: "<table></table>",
     inputs: [
@@ -57,7 +57,7 @@ oPlugin.before("WebChat.open", function(){
             placeholder: "@i18n:webchat.ChatFormPlaceholderNickname",
             label: "@i18n:webchat.ChatFormNickname",
             readonly: true,
-            value: function(){ if(window.NOW)return window.NOW.user_display_name; return "";}
+            value: NOW_name;
         }
     ]
 }};;
