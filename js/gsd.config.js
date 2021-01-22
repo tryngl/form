@@ -39,7 +39,7 @@ window._genesys = {
                         validateWhileTyping: true,
                         validate: function(e, ndWrapper, ndInput, ndLabel, $, CXBus, Common){
                           //if(ndInput && ndInput.val() && ndInput.val().trim() != "" && ndInput.val().match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) return true;
-                          if(ndInput && ndInput.val() && ndInput.val().trim() != "" && ndInput.val().match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))) return true;
+                          if(ndInput && ndInput.val() && ndInput.val().trim() != "" && ndInput.val().match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(ndInput.val()))) return true;
                             return false;
                         },
                     }
