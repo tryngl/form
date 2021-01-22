@@ -59,12 +59,12 @@ window._genesys = {
 var oPlugin = CXBus.registerPlugin("myPlugin");
 
 oPlugin.before("WebChat.open", function(){
-  var NOW_name = window.NOW ? window.NOW.user_display_name : "";
+  var NOW_name = window.NOW ? window.NOW.user_display_name : "Customer";
   return { form : { autoSubmit: true}, formJSON: {
     wrapper: "<table></table>",
     inputs: [
       {
-          name: "name", 
+          name: "nickname", 
           maxlength: "100",
           placeholder: "@i18n:webchat.ChatFormPlaceholderNickname",
           label: "Name",
