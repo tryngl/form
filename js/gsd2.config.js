@@ -47,6 +47,20 @@ window._genesys = {
   }
 };
 
+var oPlugin = CXBus.registerPlugin("myPlugin");
+
+// Use before function to intercept 'WebChat.open' command
+// and manipulate the input 'options' object before execution continues
+oPlugin.before("WebChat.open", function(options){
+  
+  // We'll append an additional form field to the one already added 
+  // by 'open' command in myChatButton() function triggered by button
+  if(options)options.form.autoSubmit=true;
+  
+  // Still need to return the 'options' object to continue execution
+  return options;
+});
+
 // var widgetBaseUrl = 'https://apps.mypurecloud.com/widgets/9.0/',
 //         widgetScriptElement = document.createElement('script');
            
