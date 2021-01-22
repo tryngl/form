@@ -57,7 +57,7 @@ oPlugin.before("WebChat.open", function(){
             placeholder: "@i18n:webchat.ChatFormPlaceholderNickname",
             label: "@i18n:webchat.ChatFormNickname",
             readonly: true,
-            value: NOW_name;
+            value: NOW_name
         }
     ]
 }};;
