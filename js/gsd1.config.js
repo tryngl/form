@@ -73,7 +73,7 @@ var oPlugin = CXBus.registerPlugin("myPlugin");
 oPlugin.before("WebChat.open", function(){
   var NOW_name = "";
   var isReadOnly = false;
-  var formName = {};
+  var formName;
   if (window.NOW) {
     NOW_name = window.NOW.user_display_name;
     isReadOnly = true;
