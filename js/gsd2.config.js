@@ -64,10 +64,10 @@ oPlugin.before("WebChat.open", function(){
     wrapper: "<table></table>",
     inputs: [
       {
-          name: "nickname", 
+          name: "name", 
           maxlength: "100",
           placeholder: "@i18n:webchat.ChatFormPlaceholderNickname",
-          label: "@i18n:webchat.ChatFormNickname",
+          label: "Name",
           readonly: true,
           value: NOW_name
       }
