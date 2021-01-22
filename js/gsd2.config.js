@@ -6,19 +6,19 @@ window._genesys = {
           theme: 'dark'
       },
       webchat: {
-        form: {
-            wrapper: "<table></table>",
-            inputs: [
-                {
-                    name: "nickname", 
-                    maxlength: "100",
-                    placeholder: "@i18n:webchat.ChatFormPlaceholderNickname",
-                    label: "@i18n:webchat.ChatFormNickname",
-                    readonly: true,
-                    value: function(){ if(window.NOW)return window.NOW.user_display_name; return "";}
-                }
-            ]
-        },
+        // form: {
+        //     wrapper: "<table></table>",
+        //     inputs: [
+        //         {
+        //             name: "nickname", 
+        //             maxlength: "100",
+        //             placeholder: "@i18n:webchat.ChatFormPlaceholderNickname",
+        //             label: "@i18n:webchat.ChatFormNickname",
+        //             readonly: true,
+        //             value: function(){ if(window.NOW)return window.NOW.user_display_name; return "";}
+        //         }
+        //     ]
+        // },
         autoInvite: {
             enabled: true,
             timeToInviteSeconds: 15,
@@ -48,7 +48,19 @@ var oPlugin = CXBus.registerPlugin("myPlugin");
 // Use before function to intercept 'WebChat.open' command
 // and manipulate the input 'options' object before execution continues
 oPlugin.before("WebChat.open", function(){
-  return { form : { autoSubmit: true}};;
+  return { form : { autoSubmit: true}, formJSON: {
+    wrapper: "<table></table>",
+    inputs: [
+        {
+            name: "nickname", 
+            maxlength: "100",
+            placeholder: "@i18n:webchat.ChatFormPlaceholderNickname",
+            label: "@i18n:webchat.ChatFormNickname",
+            readonly: true,
+            value: function(){ if(window.NOW)return window.NOW.user_display_name; return "";}
+        }
+    ]
+}};;
 });
 
 // var widgetBaseUrl = 'https://apps.mypurecloud.com/widgets/9.0/',
